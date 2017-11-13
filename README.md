@@ -1,5 +1,5 @@
 # django-demo
-django基础教程，由浅入深，一步一步学习java，最后学到的不单单是基础！
+django基础教程，由浅入深，一步一步学习django，最后学到的不单单是基础！
 
 ### 环境搭建
 
@@ -25,8 +25,7 @@ django基础教程，由浅入深，一步一步学习java，最后学到的不�
     2、源码安装
     ```javascript
     下载源码，进入根目录执行python setup.py install
-
-```
+    ```
 
 [参考链接](https://www.djangoproject.com/download/)
 
