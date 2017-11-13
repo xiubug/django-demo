@@ -42,7 +42,7 @@ $ python -m django --version
 
 ### 创建项目及应用
 
-#### 创建步骤
+#### 创建项目步骤
 
     1、打开命令行，进入想要安置项目的目录
     2、命令行输入：django-admin startproject myblog，若没有报错，则创建项目成功
@@ -73,3 +73,33 @@ urls.py：URL配置文件，Django项目中所有地址（页面）都需要我�
 settings.py：项目的总配置文件，里面包含了数据库、Web应用、时间等各种配置
 
 __init__.py: Python中声明模版的文件，内容默认为空
+
+#### 创建应用步骤
+
+    1、打开命令行，进入项目中manage.py同级目录
+    2、命令行输入：python manage.py startapp blog
+    3、添加应用名到setting.py中的INSTALLED_APPS里
+    
+#### 项目目录结构
+
+    migrations
+        __init__.py
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    tests.py
+    views.py
+ 
+migrations：数据移植（迁移）模块，内容自动生成
+
+admin.py：该应用的后台管理系统设置
+
+apps.py：该应用的一些配置，Django-1.9以后自动生成
+
+models.py：数据模块，使用ORM框架，类似于结构中的Models（模型）
+
+tests.py：自动化测试模块，Django提供了自动化测试功能，在这里编写测试脚本（语句）
+
+views.py：执行响应的代码所在模块，代码逻辑处理的主要地点，项目中大部分代码均在这里编写
+    
