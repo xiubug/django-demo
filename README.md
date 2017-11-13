@@ -80,7 +80,7 @@ $ python -m django --version
     2、命令行输入：python manage.py startapp blog
     3、添加应用名到setting.py中的INSTALLED_APPS里
     
-#### 项目目录结构
+#### 应用目录结构
 
     migrations
         __init__.py
@@ -102,4 +102,18 @@ $ python -m django --version
     5、tests.py：自动化测试模块，Django提供了自动化测试功能，在这里编写测试脚本（语句）
     
     6、views.py：执行响应的代码所在模块，代码逻辑处理的主要地点，项目中大部分代码均在这里编写
+    
+#### 创建第一个页面（响应）
+
+编辑blog.views
+
+    1、每个响应对应一个函数，函数必须返回一个响应
+    2、函数必须存在一个参数，一般约定为request
+    3、每一个响应（函数）对应一个
+    
+编辑urls.py
+    
+    1、每个URL都以url的形式写出来
+    2、url函数放在urlpatterns列表中
+    3、url函数三个参数：URL（正则），对应方法，名称
     
