@@ -159,3 +159,55 @@ $ python -m django --version
     1、在APP的Templates目录下创建以APP名为名称的目录，将html文件放入新创建的目录下
     
     
+### Models
+
+#### Django中的Models是什么？
+
+    1、通常，一个Model对应数据库的一张数据表
+    2、Django中Models以类的形式表现
+    3、它包含了一些基本字段以及数据的一些行为
+    
+#### ORM
+    
+    1、对象关系映射(Object Relation Mapping)
+    2、实现了对象和数据库之间的映射
+    3、隐藏了数据访问的细节，不需要编写SQL语句
+    
+#### 编写Models步骤
+
+    1、在应用根目录下创建models.py，并引入models模块
+    2、创建类，继承models.Model，该类即是一张数据表
+    3、在类中创建字段
+    
+#### 字段创建
+    
+    1、字段即类里面的属性(变量)，如attr = models.CharField(max_length=64)
+    
+[参考链接](https://docs.djangoproject.com/en/1.11/ref/models/fields/)
+
+#### 生成数据表步骤
+
+    1、命令行中进入manage.py同级目录
+    2、执行python manage.py makemigrations app名(可选)
+    3、再执行python manage.py migrate
+    
+#### 生成数据表查看
+
+    1、Django会自动在app/migrations/目录下生成移植文件
+    2、执行python manage.py sqlmigrate 应用名 文件id 查看SQL语句
+    
+#### 生成数据表查看并编辑db.sqlite3
+
+    1、使用第三方软件 SQLite Expert Personal 轻量级、完全免费
+    
+#### 页面呈现数据后台步骤
+
+    1、views.py中import models
+    2、article = models.Article.objects.get(pk=1)
+    3、render(request, page, {'article': article})
+    
+#### 页面呈现数据前端步骤
+
+    1、模板可直接使用对象以及对象的"."操作，如
+    
+    
