@@ -117,3 +117,45 @@ $ python -m django --version
     2、url函数放在urlpatterns列表中
     3、url函数三个参数：URL（正则），对应方法，名称
     
+### 第一个Templates
+
+第二种URL配置：包含其他URL
+    
+    1、在根urls.py中引入include
+    2、在APP目录下创建urls.py文件，格式与根urls.py相同
+    3、根urls.py中url函数第二个参数改为include('blog.urls')
+    
+注意事项：
+    
+    1、根urls.py针对APP配置的URL名称，是该APP所有URL的总路径
+    2、配置URL时注意正则表达式结尾符号$和/
+    
+#### 什么是Templates？(Templates介绍)
+
+    1、HTML文件
+    2、使用了Django模板语言(Django Template Language, DTL)
+    3、可以使用第三方模板(如Jinja2)
+    
+    
+#### 开发Templates步骤
+
+    1、在APP的根目录下创建名叫Templates的目录
+    2、在该目录下创建HTML文件
+    3、在views.py中返回render()
+    
+#### DTL初步使用
+
+    1、render()函数中支持一个dict类型参数
+    2、该字典是后台传递到模板的参数，键为参数名
+    3、在模板中使用{{参数名}}来直接使用
+    
+#### Django查找Template
+
+    1、Django按照INSTALLED_APPS中的添加顺序查找Templates
+    2、不同APP下Templates目录下的同名.html文件会造成冲突
+    
+#### 解决Templates冲突方案
+    
+    1、在APP的Templates目录下创建以APP名为名称的目录，将html文件放入新创建的目录下
+    
+    
