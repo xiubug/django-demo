@@ -210,4 +210,34 @@ $ python -m django --version
 
     1、模板可直接使用对象以及对象的"."操作，如
     
+### Admin
+
+#### 什么是Admin？
+
+    1、Admin是Django自带的一个功能强大的自动化数据管理界面，
+    2、被授权的用户可直接在Admin中管理数据库
+    3、Django提供了许多针对Admin的定制功能
+    
+#### 配置Admin
+
+    1、创建用户：python manage.py createsuperuser 创建超级用户，访问后台地址
+    2、Admin访问入口：http://127.0.0.1:8000/admin/
+    3、变成中文：修改setting.py中LANGUAGE_CODE = 'zh_Hans'
+    
+#### 配置应用
+
+    1、在应用下admin.py中引入自身的models模块(或里面的模型类)
+    2、编辑admin.py:admin.site.register(models.Article)
+    
+#### 使用Admin修改数据
+
+    1、点击Article超链接进入Article列表页面
+    2、点击任意一条数据，进入编辑页面修改
+    3、编辑页面下方一排按钮可执行相应操作
+    
+#### 修改数据默认显示名称步骤
+
+    1、在Article类下添加一个方法
+    2、根据Python版本选择__str__(self)(v3.0以上)或__unicode__(self)
+    3、return self.title
     
