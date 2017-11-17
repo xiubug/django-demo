@@ -4,6 +4,7 @@ myblog_env1/Include/*
 myblog_env1/Lib/*
 myblog_env1/Scripts/*
 myblog_env1/tcl/*
+myblog_env1/tcl/**
 myblog_env1/pip-selfcheck.json
 
 
