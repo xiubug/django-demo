@@ -290,3 +290,14 @@ $ python -m django --version
     1、根urls，写在include()的第二个参数位置，namespace = 'blog'
     2、应用下则写在url()的第三个参数位置，name = 'article'
     两种写法区别：主要取决于是否使用include引用了另一个url配置文件
+    
+#### 博客撰写页面内容
+
+    1、标题编辑栏
+    2、文章内容编辑区域
+    3、提交按钮
+    
+#### 博客撰写页面编辑响应函数
+
+    1、使用request.POST['参数名']获取表单数据
+    2、models.Article.objects.create(title, content)创建对象
