@@ -5,13 +5,15 @@
     <title>Edit Page</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="{% url 'blog:edit_action' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="article_id" value="{{ article.id | default:'0' }}" />
         <label>文章标题
-            <input type="text" name="title" />
+            <input type="text" name="title" value="{{ article.title }}" />
         </label>
         <br>
         <label>文章内容
-            <input type="text" name="content" />
+            <input type="text" name="content" value="{{ article.content }}" />
         </label>
         <br>
         <input type="submit" value="提交" />
